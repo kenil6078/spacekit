@@ -1,0 +1,202 @@
+/** SCSS File: style.scss */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  background: #f3f4f6;
+}
+
+.admin-panel {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: row;
+}
+
+.sidebar {
+  width: 220px;
+  background: white;
+  padding: 1.5rem 1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  border-right: 1px solid #e5e7eb;
+
+  h2 {
+    color: #1d4ed8;
+    margin-bottom: 1.5rem;
+  }
+
+  ul {
+    list-style: none;
+
+    li {
+      padding: 0.7rem 1rem;
+      margin-bottom: 0.5rem;
+      cursor: pointer;
+      border-radius: 8px;
+
+      &.active,
+      &:hover {
+        background-color: #e0f2fe;
+      }
+    }
+    .logout-button{
+        margin-left:10px ;
+        padding: 0.6rem 1.7rem;
+        align-self: end;
+        background-color: #2563eb;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background 0.3s;
+
+        &:hover {
+          background-color: #1d4ed8;
+        }
+    }
+  }
+}
+
+.content {
+  flex: 1;
+  padding: 2rem;
+  background: white;
+  
+  .table-section {
+    display: none;
+
+    &.hidden {
+      display: none;
+    }
+
+    &:not(.hidden) {
+      display: block;
+    }
+
+    h3 {
+      margin-bottom: 1rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      margin-top: 1rem;
+      border: 1px solid #d1d5db;
+      border-radius: 6px;
+      overflow: hidden;
+
+      th, td {
+        padding: 0.75rem;
+        border-bottom: 1px solid #e5e7eb;
+        text-align: left;
+      }
+
+      tbody tr:last-child td {
+        text-align: center;
+        color: #6b7280;
+      }
+    }
+
+    .product-form {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      position: relative;
+
+      label {
+        display: flex;
+        flex-direction: column;
+        font-size: 0.9rem;
+        color: #374151;
+
+        input[type="text"],
+        input[type="file"] {
+          margin-top: 0.25rem;
+          padding: 0.5rem;
+          border: 1px solid #d1d5db;
+          border-radius: 6px;
+          min-width: 200px;
+        }
+      }
+
+      button {
+        position: absolute;
+        top: 1.1rem;
+        right: 12rem;
+        padding: 0.5rem 1.1rem;
+        align-self: end;
+        background-color: #2563eb;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background 0.3s;
+
+        &:hover {
+          background-color: #1d4ed8;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .admin-panel {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    border-right: none;
+    border-bottom: 1px solid #e5e7eb;
+  }
+
+  .sidebar ul {
+    display: flex;
+    flex-direction: row;
+    gap: 0.7rem;
+    flex-wrap: wrap;
+  }
+
+  ul .logout-button{
+          position: absolute;
+          left: 10rem;
+          top: 8.7rem;
+  }
+
+  .content {
+    padding: 1rem;
+  }
+
+  .table-section .product-form {
+     padding: 1.5rem 1.1rem;
+    flex-direction: column;
+    gap: 4rem;
+
+    label input {
+          width: 100%;
+    }
+
+    button {
+          margin-top: 20rem;
+          margin-right: -5rem;
+      width: 50%;
+      height: 2.8rem;
+    }
+  }
+
+  #product-table{
+          margin-top: 6rem;
+  }
+}
+

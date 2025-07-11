@@ -1,0 +1,174 @@
+/** SCSS File: style1.scss */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  background: #f3f4f6;
+}
+
+.admin-panel {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: row;
+}
+
+.sidebar {
+  width: 220px;
+  background: white;
+  padding: 1.5rem 1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  border-right: 1px solid #e5e7eb;
+}
+.sidebar h2 {
+  color: #1d4ed8;
+  margin-bottom: 1.5rem;
+}
+.sidebar ul {
+  list-style: none;
+}
+.sidebar ul li {
+  padding: 0.7rem 1rem;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+  border-radius: 8px;
+}
+.sidebar ul li.active, .sidebar ul li:hover {
+  background-color: #e0f2fe;
+}
+.sidebar ul .logout-button {
+  margin-left: 10px;
+  padding: 0.6rem 1.7rem;
+  align-self: end;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.sidebar ul .logout-button:hover {
+  background-color: #1d4ed8;
+}
+
+.content {
+  flex: 1;
+  padding: 2rem;
+  background: white;
+}
+.content .table-section {
+  display: none;
+}
+.content .table-section.hidden {
+  display: none;
+}
+.content .table-section:not(.hidden) {
+  display: block;
+}
+.content .table-section h3 {
+  margin-bottom: 1rem;
+}
+.content .table-section table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  margin-top: 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.content .table-section table th, .content .table-section table td {
+  padding: 0.75rem;
+  border-bottom: 1px solid #e5e7eb;
+  text-align: left;
+}
+.content .table-section table tbody tr:last-child td {
+  text-align: center;
+  color: #6b7280;
+}
+.content .table-section .product-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  position: relative;
+}
+.content .table-section .product-form label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9rem;
+  color: #374151;
+}
+.content .table-section .product-form label input[type=text],
+.content .table-section .product-form label input[type=file] {
+  margin-top: 0.25rem;
+  padding: 0.5rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  min-width: 200px;
+}
+.content .table-section .product-form button {
+  position: absolute;
+  top: 1.1rem;
+  right: 12rem;
+  padding: 0.5rem 1.1rem;
+  align-self: end;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.content .table-section .product-form button:hover {
+  background-color: #1d4ed8;
+}
+
+@media (max-width: 768px) {
+  .admin-panel {
+    flex-direction: column;
+  }
+  .sidebar {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    border-right: none;
+    border-bottom: 1px solid #e5e7eb;
+  }
+  .sidebar ul {
+    display: flex;
+    flex-direction: row;
+    gap: 0.7rem;
+    flex-wrap: wrap;
+  }
+  ul .logout-button {
+    position: absolute;
+    left: 10rem;
+    top: 8.7rem;
+  }
+  .content {
+    padding: 1rem;
+  }
+  .table-section .product-form {
+    padding: 1.5rem 1.1rem;
+    flex-direction: column;
+    gap: 4rem;
+  }
+  .table-section .product-form label input {
+    width: 100%;
+  }
+  .table-section .product-form button {
+    margin-top: 20rem;
+    margin-right: -5rem;
+    width: 50%;
+    height: 2.8rem;
+  }
+  #product-table {
+    margin-top: 6rem;
+  }
+}/*# sourceMappingURL=style.css.map */
