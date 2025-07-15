@@ -1,3 +1,6 @@
+<?php
+include 'connection.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,7 +31,25 @@
           </div>
           <table>
                     <thead>
-                              <tr><th>ID</th><th>Username</th><th>Email</th><th>Message</th></tr>
+                              <tr><th>ID</th><th>Username</th><th>Email</th><th>Password</th></tr>
+                              <?php
+                                  $id = 1;
+                                  $read = "SELECT * FROM `registration`";
+
+                                  $result1 = mysqli_query($conn,$read);
+
+                                  while($row = mysqli_fetch_assoc($result1)){
+                                      echo "<tr>
+                                              <td>".$id."</td>
+                                              <td>".$row['username']."</td>
+                                              <td>".$row['email']."</td>
+                                              <td>".$row['password']."</td>
+                                            </tr>";
+                                      $id++;
+                                  }
+
+
+                             ?>
                     </thead>
                     <tbody>
                               <tr><td colspan="4">No rows found</td></tr>

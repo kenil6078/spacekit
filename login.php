@@ -12,7 +12,7 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: Helvetica Now Display;
     }
 
     body {
@@ -24,14 +24,14 @@
     }
 
     .glass-container {
-      background: rgba(255, 255, 255, 0.333);
+      background: rgba(255, 255, 255, 0.14);
       border-radius: 16px;
       padding: 40px;
       width: 320px;
       backdrop-filter: blur(15px);
       border: 1px solid rgba(255, 255, 255, 0.2);
-      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-      color: white;
+      box-shadow: 0 8px 32px 0 rgba(135, 100, 31, 0.37);
+      color: #111;
     }
 
     .glass-container h2 {
@@ -60,7 +60,8 @@
     }
 
     .input-group input::placeholder {
-      color: #ccc;
+      color: #111;
+      font-weight: 400;
     }
 
     .buttons {
@@ -74,7 +75,7 @@
       padding: 10px;
       border: none;
       border-radius: 8px;
-      background-color: rgba(255, 255, 255, 0.34);
+      background-color: lightgreen;
       color: #fff;
       font-weight:600;
       color:#fff;
@@ -83,7 +84,7 @@
     }
 
     .buttons button:hover {
-      background-color: rgba(255, 255, 255, 0.3);
+      background-color: darkgreen;
     }
 
     .forgot-link {
@@ -115,11 +116,11 @@
         <input type="password" id="password" placeholder="Enter your password" required>
       </div>
       <div class="forgot-link">
-        <a href="#">Forgot Password?</a>
+        <a href="register.php">Forgot Password?</a>
       </div>
       <div class="buttons">
         <button type="submit">Login</button>
-        <button type="reset">Reset</button>
+        <button type="button" onclick="location.href='register.php'">Register</button>
       </div>
     </form>
   </div>
