@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -109,11 +107,11 @@
     <form action="#">
       <div class="input-group">
         <label for="username">Username</label>
-        <input type="text" id="username" placeholder="Enter your username" required>
+        <input type="text" name="username" id="username" placeholder="Enter your username" required>
       </div>
       <div class="input-group">
         <label for="password">Password</label>
-        <input type="password" id="password" placeholder="Enter your password" required>
+        <input type="password" name="password" id="password" placeholder="Enter your password" required>
       </div>
       <div class="forgot-link">
         <a href="register.php">Forgot Password?</a>

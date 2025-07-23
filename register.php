@@ -106,7 +106,7 @@ body {
 <body>
   <?php
   // Include the connection file
-  include 'connection1.php';
+  include 'connection.php';
   ?>
   <div class="container">
     <form class="form-box" action="register.php" method="POST">
