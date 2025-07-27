@@ -64,13 +64,34 @@ include 'connection1.php';
 
       <section id="products" class="table-section hidden">
         <h3>Products</h3>
-        <form class="product-form">
+        <form class="product-form" method='post' action="dashboard.php">
           <label>Product Name:<input type="text" name="product_name"></label>
-          <label>Image:<input type="file" name="image"></label>
+          <label>Image:<input type="text" name="image"></label>
           <label>Description:<input type="text" name="description"></label>
           <label>Price:<input type="text" name="price"></label>
           <button type="submit">Add Product</button>
         </form>
+
+        <?php
+            if($_SERVER['REQUEST_METHOD']=='POST'){
+                    $p_name = $_POST['product_name'];
+                    $p_image = $_POST['image'];
+                    $p_description = $_POST['description'];
+                    $p_price = $_POST['price'];
+
+                    $insert1 = "INSERT INTO `product` (`p_name`, `p_price`, `p_image`, `p_description`) VALUES ('$p_name', '$p_price', '$p_image', '$p_description')";
+
+                    $result2 = mysqli_query($conn,$insert1);
+
+                   if($result2)
+                        {
+                        echo "<script>alert('Product Insert successful!');</script>";
+                        }
+                        else{
+                            echo "<script>alert('Registration failed. Please try again.');</script>";
+                            }  
+              }
+?>
         <table id="product-table"><thead><tr><th>ID</th><th>Name</th><th>Price</th><th>Status</th></tr></thead><tbody><tr><td colspan="4">No rows found</td></tr></tbody></table>
       </section>
 

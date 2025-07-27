@@ -20,7 +20,7 @@
                     height: 100%;
                     width: 100%;
                     font-family: Helvetica Now display;
-                    background-color:rgba(214, 107, 20, 0.61);
+                    background-color:#9E9E9E;
           }
           .nav-view{
                     padding:3rem 2rem;

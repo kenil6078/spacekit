@@ -99,6 +99,10 @@ body {
   .form-box {
     padding: 20px;
   }
+  #canvas{
+    height: 100%;
+    width: 100%;
+  }
 }
 
   </style>
@@ -108,6 +112,7 @@ body {
   // Include the connection file
   include 'connection.php';
   ?>
+  <canvas id="canvas" width="500" height="800" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); display: none; z-index: 2;"></canvas>
   <div class="container">
     <form class="form-box" action="register.php" method="POST">
       <h2>Register</h2>
@@ -141,7 +146,22 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
   $result = mysqli_query($conn,$insert);
 
   if($result){
-    echo "<script>alert('Registration successful!');</script>";
+    echo "<script type='module'>
+      import { DotLottie } from 'https://cdn.jsdelivr.net/npm/@lottiefiles/dotlottie-web/+esm';
+
+      new DotLottie({
+        autoplay:true,
+        loop: true,
+        canvas: document.getElementById('canvas'),
+        src: 'https://lottie.host/3a2c48a1-316b-4d86-93c4-aa9b678aa518/Jw2UY8q7bz.lottie', // or .json file
+      });
+
+      canvas.style.display = 'initial';
+     // document.querySelector('.container').style.display = 'none';
+      setTimeout(() => {
+        window.location.href = 'login.php';
+      }, 5000); // Redirect after 5 seconds
+    </script>";
   } else {
     echo "<script>alert('Registration failed. Please try again.');</script>";
   }
