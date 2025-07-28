@@ -76,7 +76,7 @@
           <div class="nav-view">
                 <h4><a href="index.php">Home</a></h4>
                 <h4><a href="products.php">Products</a></h4>
-                <h4><a href="faq.php">FAQ</a></h4>
+                <h4><a href="addtocart.php">Cart</a></h4>
                 <h4><a href="contact.php">Contact Us</a></h4>
                 <button><a href="login.php">Login<i class="ri-arrow-right-line"></i></a></button>
           </div>

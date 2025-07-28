@@ -550,6 +550,9 @@ main .part-5 .scroll .div-4 .picture {
   background-size: cover;
   background-position: 18% 0%;
 }
+main .foo {
+  margin-top: 90rem;
+}
 main .contact {
   margin-top: 10rem;
   width: 100%;
@@ -663,7 +666,7 @@ main .products .component .product-1 .btm h4 {
 }
 
 footer {
-  margin-top: 260%;
+  margin-top: 20rem;
   width: 100%;
   height: 60vh;
 }
@@ -1272,6 +1275,9 @@ footer .license h4 span {
   main .part-5 .scroll .div-4 .picture {
     right: 2%;
   }
+  main .foo {
+    margin-top: 15rem;
+  }
   main .contact {
     margin-top: 10rem;
     width: 100%;
@@ -1367,7 +1373,7 @@ footer .license h4 span {
     font-size: 2rem;
   }
   main footer {
-    margin-top: 20%;
+    margin-top: 15rem;
     width: 100%;
   }
   main footer .logo {

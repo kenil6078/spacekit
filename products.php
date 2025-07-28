@@ -43,7 +43,7 @@
             echo '
             <div class="product-1">
                     <div class="top">
-                              <img src="'.$data['p_image'].'" alt="">
+                              <img src="'.$data['p_image'].'" alt="" onclick="window.location.href=\'addtocart.php?p_id='.$data['p_id'].'\'">
                     </div>
                     <div class="btm">
                               <div class="btm-text">

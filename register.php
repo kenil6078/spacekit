@@ -151,7 +151,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 
       new DotLottie({
         autoplay:true,
-        loop: true,
+        loop: false,
         canvas: document.getElementById('canvas'),
         src: 'https://lottie.host/3a2c48a1-316b-4d86-93c4-aa9b678aa518/Jw2UY8q7bz.lottie', // or .json file
       });
