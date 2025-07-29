@@ -1,6 +1,12 @@
 <?php
 include 'connection1.php';
+session_start();
+if(!isset($_SESSION['check'])){
+    header("Location: index.php");
+    exit();
+}
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,11 +21,11 @@ include 'connection1.php';
       <h2>Admin Panel</h2>
       <nav>
         <ul>
-          <li data-target="login">Login Users</li>
+          <li data-target="login">Registered Users</li>
           <li data-target="contacts">Contacts</li>
           <li data-target="products">Products</li>
           <li data-target="orders">Product Orders</li>
-          <button type="submit" class="logout-button">Logout</button>
+          <button type="submit" onclick="location.href='logout.php'" class="logout-button">Logout</button>
         </ul>
       </nav>
     </aside>
@@ -27,7 +33,7 @@ include 'connection1.php';
     <main class="content">
 <section id="login" class="table-section">
           <div class="login-header">
-                    <h3>Login Users</h3>
+                    <h3>Registered Users</h3>
           </div>
           <table>
                     <thead>
@@ -59,16 +65,36 @@ include 'connection1.php';
 
       <section id="contacts" class="table-section hidden">
         <h3>Contacts</h3>
-        <table><thead><tr><th>ID</th><th>Name</th><th>Email</th><th>Message</th></tr></thead><tbody><tr><td colspan="4">No rows found</td></tr></tbody></table>
+        <table><thead>
+          <tr><th>ID</th><th>Name</th><th>Email</th><th>Message</th></tr>
+           <?php
+                                  $id = 1;
+                                  $contact = "SELECT * FROM `contact`";
+
+                                  $result_con = mysqli_query($conn,$contact);
+
+                                  while($row_con = mysqli_fetch_assoc($result_con)){
+                                      echo "<tr>
+                                              <td>".$id."</td>
+                                              <td>".$row_con['name']."</td>
+                                              <td>".$row_con['email']."</td>
+                                              <td>".$row_con['message']."</td>
+                                            </tr>";
+                                      $id++;
+                                  }
+
+
+                             ?>
+        </thead><tbody><tr><td colspan="4">No rows found</td></tr></tbody></table>
       </section>
 
       <section id="products" class="table-section hidden">
         <h3>Products</h3>
         <form class="product-form" method='post' action="dashboard.php">
-          <label>Product Name:<input type="text" name="product_name"></label>
-          <label>Image:<input type="text" name="image"></label>
-          <label>Description:<input type="text" name="description"></label>
-          <label>Price:<input type="text" name="price"></label>
+          <label>Product Name:<input type="text" name="product_name" required></label>
+          <label>Image:<input type="text" name="image" required></label>
+          <label>Description:<input type="text" name="description" required></label>
+          <label>Price:<input type="text" name="price" required></label>
           <button type="submit">Add Product</button>
         </form>
 
@@ -92,7 +118,28 @@ include 'connection1.php';
                             }  
               }
 ?>
-        <table id="product-table"><thead><tr><th>ID</th><th>Name</th><th>Price</th><th>Status</th></tr></thead><tbody><tr><td colspan="4">No rows found</td></tr></tbody></table>
+        <table id="product-table"><thead>
+          <tr><th>ID</th><th>Name</th><th>Price</th><th>Image</th><th>Description</th><th>Status</th></tr>
+           <?php
+                                  $id = 1;
+                                  $product_r = "SELECT * FROM `product`";
+
+                                  $result_show = mysqli_query($conn,$product_r);
+
+                                  while($row_pr = mysqli_fetch_assoc($result_show)){
+                                      echo "<tr>
+                                              <td>".$id."</td>
+                                              <td>".$row_pr['p_name']."</td>
+                                              <td>".$row_pr['p_price']."</td>
+                                              <td>".$row_pr['p_image']."</td>
+                                              <td>".$row_pr['p_description']."</td>
+                                            </tr>";
+                                      $id++;
+                                  }
+
+
+                             ?>
+        </thead><tbody><tr><td colspan="4">No rows found</td></tr></tbody></table>
       </section>
 
       <section id="orders" class="table-section hidden">

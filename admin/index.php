@@ -1,47 +1,27 @@
- <?php
-
-    include 'connection.php';
+<?php
+include 'connection1.php';
     session_start();
 
-    if(isset($_POST['login'])){
-
-       if($_SERVER['REQUEST_METHOD'] == 'POST') {
+              if($_SERVER['REQUEST_METHOD'] == 'POST') {
         $username = $_POST['username'];
         $password = $_POST['password'];
 
         // Validate user credentials
-        $query = "SELECT * FROM registration WHERE username='$username' AND password='$password'";
+        $query = "SELECT * FROM `admin` WHERE a_user='$username' AND a_pass='$password'";
         $result = mysqli_query($conn, $query);
 
         if(mysqli_num_rows($result) > 0) {
-            $_SESSION['u_nm'] = $username;
-            // $_SESSION['loggedin'] = true;
-
-            echo '<script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js" type="module"></script>
-                    <dotlottie-wc src="https://lottie.host/b21093ba-2288-42ec-b676-61ba703f89bb/oYSBJZ79DJ.lottie" style="width: 700px;height: 500px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index:2" speed="1" autoplay loop></dotlottie-wc>';
-            echo "<script>
-            setTimeout(() => {
-                window.location.href = 'index.php';
-            }, 4000); // Redirect after 2 seconds
-            </script>";
-            
-            // Optionally, you can redirect to a different page
-            // header("Location: index.php");
-
-          // header("Location: index.php");
+            $_SESSION['check'] = $username;
+          //   $_SESSION['loggedin'] = true;
+          echo "<script>alert('Login successful!');</script>";
+                    header("Location: dashboard.php");
         } else {
             echo "<script>alert('Invalid username or password');</script>";
         }
     }
-      
-    }
 
 
-   
-
-  ?>
-
-
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -59,7 +39,7 @@
 
     body {
       height: 100vh;
-      background: url(./assets/mainimage.jpg) no-repeat center center/cover;
+      background: url(https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D) no-repeat center center/cover;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -78,6 +58,8 @@
 
     .glass-container h2 {
       text-align: center;
+      font-size:1.6rem;
+      font-weight: 600;
       margin-bottom: 30px;
     }
 
@@ -108,7 +90,8 @@
 
     .buttons {
       display: flex;
-      justify-content: space-between;
+      align-items: center;
+      justify-content: center;
       margin-top: 20px;
     }
 
@@ -148,7 +131,7 @@
 <body>
  
   <div class="glass-container">
-    <h2>Login</h2>
+    <h2>Admin-Login</h2>
     <form action="" method="POST">
       <div class="input-group">
         <label for="username">Username</label>
@@ -163,10 +146,9 @@
       </div>
       <div class="buttons">
         <button type="submit" name='login'>Login</button>
-        <button type="button" onclick="location.href='register.php'">Register</button>
+        <!-- <button type="button" onclick="location.href='register.php'">Register</button> -->
       </div>
     </form>
   </div>
 </body>
 </html>
-

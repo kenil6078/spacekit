@@ -833,6 +833,12 @@ footer .license h4 span {
     display: flex;
     gap: 5px;
   }
+  main nav .left .logout {
+    z-index: -1;
+    position: absolute;
+    top: 0.69rem;
+    right: 2.09%;
+  }
   main nav .left h5 {
     display: none;
   }

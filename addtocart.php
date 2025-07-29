@@ -1,4 +1,9 @@
-<?php include 'header.php';?>
+<?php include 'header.php';
+session_start();
+if(!isset($_SESSION['u_nm'])) {
+    header("Location: login.php");
+    exit();
+}?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

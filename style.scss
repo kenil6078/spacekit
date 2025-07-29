@@ -905,6 +905,12 @@ footer{
                                                             gap: 5px;
                                                   }
                                         }
+                                        .logout{
+                                            z-index: -1;
+                                            position: absolute;
+                                            top: 0.69rem;
+                                            right: 2.09%;
+                                        }
                                         h5{
                                                   display: none;
                                         }

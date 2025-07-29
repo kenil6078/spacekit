@@ -65,6 +65,12 @@
                     cursor: pointer;
                     text-decoration: none;
           }
+          .logout{
+            z-index: -1;
+            width: 50%;
+            position: absolute;
+            top: 17.6rem;
+          }
 
           @media (min-width:780px){
                     .nav-view {
@@ -79,7 +85,14 @@
                 <h4><a href="addtocart.php">Cart</a></h4>
                 <h4><a href="contact.php">Contact Us</a></h4>
                 <button><a href="login.php">Login<i class="ri-arrow-right-line"></i></a></button>
+                <button class="logout"><a href="logout.php">Logout<i class="ri-arrow-right-line"></i></a></button>
           </div>
           <a href="index.php"><i class="ri-close-fill"></i></a>
 </body>
 </html>
+ <?php
+    session_start();
+    if(isset($_SESSION['u_nm'])) {
+        echo '<script>document.querySelector(".logout").style.zIndex = "2";</script>';
+    }
+    ?>

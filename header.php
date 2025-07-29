@@ -22,11 +22,12 @@
                 <h4><a href="addtocart.php">Cart</a></h4>
                 <h4><a href="contact.php">Contact Us</a></h4>
                 <button><a href="login.php">Login<i class="ri-arrow-right-line"></i></a></button>
+                <button class="logout"><a href="logout.php">Logout<i class="ri-arrow-right-line"></i></a></button>
             </div>
         </nav>
         <div class="bottom">
             <div class="btn">
-                <div class="part1"><a href="">More Products<i class="ri-arrow-right-line"></i></a></div>
+                <div class="part1"><a href="products.php">More Products<i class="ri-arrow-right-line"></i></a></div>
             </div>
             <div class="bold">
                 <h2>Your Next Advanture</h2>
@@ -38,3 +39,9 @@
                 <img class="img3" src="./assets/circletext.svg" alt="">
             </div>
         </div>
+        <?php
+    session_start();
+    if(isset($_SESSION['u_nm'])) {
+        echo '<script>document.querySelector(".logout").style.zIndex = "2";</script>';
+    }
+    ?>
