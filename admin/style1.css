@@ -1,4 +1,4 @@
-/** SCSS File: style1.scss */
+/** SCSS File: style.scss */
 * {
   margin: 0;
   padding: 0;
@@ -56,6 +56,7 @@ body {
 
 .content {
   flex: 1;
+  overflow-x: scroll;
   padding: 2rem;
   background: white;
 }
@@ -171,4 +172,4 @@ body {
   #product-table {
     margin-top: 6rem;
   }
-}/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style1.css.map */

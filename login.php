@@ -22,7 +22,7 @@
             echo "<script>
             setTimeout(() => {
                 window.location.href = 'index.php';
-            }, 4000); // Redirect after 2 seconds
+            }, 2000); // Redirect after 2 seconds
             </script>";
             
             // Optionally, you can redirect to a different page

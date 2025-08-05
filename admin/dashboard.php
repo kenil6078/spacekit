@@ -131,7 +131,7 @@ if(!isset($_SESSION['check'])){
                                               <td>".$id."</td>
                                               <td>".$row_pr['p_name']."</td>
                                               <td>".$row_pr['p_price']."</td>
-                                              <td>".$row_pr['p_image']."</td>
+                                              <td><img src='".$row_pr['p_image']."' alt='".$row_pr['p_name']."' width='100'></td>
                                               <td>".$row_pr['p_description']."</td>
                                             </tr>";
                                       $id++;
