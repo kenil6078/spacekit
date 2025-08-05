@@ -37,7 +37,7 @@ if(!isset($_SESSION['check'])){
           </div>
           <table>
                     <thead>
-                              <tr><th>ID</th><th>Username</th><th>Email</th><th>Password</th></tr>
+                              <tr><th>ID</th><th>Username</th><th>Email</th><th>Password</th><th>Actions</th></tr>
                               <?php
                                   $id = 1;
                                   $read = "SELECT * FROM `registration`";
@@ -50,11 +50,13 @@ if(!isset($_SESSION['check'])){
                                               <td>".$row['username']."</td>
                                               <td>".$row['email']."</td>
                                               <td>".$row['password']."</td>
+                                               <td>
+                                                <a href='#' style='padding: 8px 12px; background-color: blue; color: white; border: none; text-decoration: none; display: inline-block;'>Edit</a>
+                                                <a href='delete-user.php?id=".$row['id']."' style='padding: 8px 12px; background-color: red; color: white; border: none; text-decoration: none; display: inline-block;'>Delete</a>
+                                                </td>
                                             </tr>";
                                       $id++;
                                   }
-
-
                              ?>
                     </thead>
                     <tbody>
@@ -66,7 +68,7 @@ if(!isset($_SESSION['check'])){
       <section id="contacts" class="table-section hidden">
         <h3>Contacts</h3>
         <table><thead>
-          <tr><th>ID</th><th>Name</th><th>Email</th><th>Message</th></tr>
+          <tr><th>ID</th><th>Name</th><th>Email</th><th>Message</th><th>Actions</th></tr>
            <?php
                                   $id = 1;
                                   $contact = "SELECT * FROM `contact`";
@@ -79,6 +81,10 @@ if(!isset($_SESSION['check'])){
                                               <td>".$row_con['name']."</td>
                                               <td>".$row_con['email']."</td>
                                               <td>".$row_con['message']."</td>
+                                               <td>
+                                                <a href='' style='padding: 8px 12px; background-color: blue; color: white; border: none; text-decoration: none; display: inline-block;'>Edit</a>
+                                                <a href='delete-contact.php?id=".$row_con['id']."' style='padding: 8px 12px; background-color: red; color: white; border: none; text-decoration: none; display: inline-block;'>Delete</a>
+                                                </td>
                                             </tr>";
                                       $id++;
                                   }
@@ -133,6 +139,10 @@ if(!isset($_SESSION['check'])){
                                               <td>".$row_pr['p_price']."</td>
                                               <td><img src='".$row_pr['p_image']."' alt='".$row_pr['p_name']."' width='100'></td>
                                               <td>".$row_pr['p_description']."</td>
+                                              <td>
+                                                <a href='' style='padding: 8px 12px; background-color: blue; color: white; border: none; text-decoration: none; display: inline-block;'>Edit</a>
+                                                <a href='delete-product.php?p_id=".$row_pr['p_id']."' style='padding: 8px 12px; background-color: red; color: white; border: none; text-decoration: none; display: inline-block;'>Delete</a>
+                                                </td>
                                             </tr>";
                                       $id++;
                                   }
