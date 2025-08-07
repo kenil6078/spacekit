@@ -145,7 +145,13 @@ if(!isset($_SESSION['u_nm'])) {
 <div class="details">
   <?php
     include 'connection.php';
-    $id = $_GET['p_id'];
+    $id = $_REQUEST['p_id'];
+
+    if(!isset($id))
+    {
+      echo "<div style='color:red;'>Your Cart is Empty</div>";
+    }
+    else{
     //echo $id;
     $p_add = "SELECT * FROM `product` where p_id = '$id'";
     $result4 = mysqli_query($conn,$p_add);
@@ -178,6 +184,7 @@ if(!isset($_SESSION['u_nm'])) {
 </div>
 ';
     }
+  }
 ?>
  
 </body>

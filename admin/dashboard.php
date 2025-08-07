@@ -51,7 +51,7 @@ if(!isset($_SESSION['check'])){
                                               <td>".$row['email']."</td>
                                               <td>".$row['password']."</td>
                                                <td>
-                                                <a href='#' style='padding: 8px 12px; background-color: blue; color: white; border: none; text-decoration: none; display: inline-block;'>Edit</a>
+                                                <a href='edit-user.php?id=".$row['id']."' style='padding: 8px 12px; background-color: blue; color: white; border: none; text-decoration: none; display: inline-block;'>Edit</a>
                                                 <a href='delete-user.php?id=".$row['id']."' style='padding: 8px 12px; background-color: red; color: white; border: none; text-decoration: none; display: inline-block;'>Delete</a>
                                                 </td>
                                             </tr>";
